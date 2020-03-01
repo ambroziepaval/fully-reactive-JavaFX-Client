@@ -1,7 +1,7 @@
 package com.ambroziepaval.stockui;
 
+import com.ambroziepaval.stockclient.StockClient;
 import com.ambroziepaval.stockclient.StockPrice;
-import com.ambroziepaval.stockclient.WebClientStockClient;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,9 +18,9 @@ public class ChartController implements Consumer<StockPrice> {
     @FXML
     public LineChart<String, Double> chart;
     private ObservableList<XYChart.Data<String, Double>> seriesData = FXCollections.observableArrayList();
-    private WebClientStockClient stockClient;
+    private StockClient stockClient;
 
-    public ChartController(WebClientStockClient stockClient) {
+    public ChartController(StockClient stockClient) {
         this.stockClient = stockClient;
     }
 
